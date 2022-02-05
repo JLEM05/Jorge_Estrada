@@ -1,0 +1,40 @@
+﻿@model List<Jorge_Estrada.Models.Clientes>;
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h3 class="display-5">Listado de Clientes</h3>
+<div class="text-center">
+    
+    <table class="table table-bordered">
+        <thead class="btn-dark">
+            <tr>
+                <th>Cliente</th>
+                <th>Dirección</th>
+                <th>Telefono</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Cliente</td>
+                        <td>@item.Direccion</td>
+                        <td>@item.Telefono</td>
+                        <td>@item.Edad</td>
+                    </tr>
+
+                }
+
+
+            }
+
+
+        </tbody>
+    </table>
+</div>
+<div>
+<a class="btn btn-light">Crear</a>
+<a class="btn btn-light">Guardar</a>
+</div>
