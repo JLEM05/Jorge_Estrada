@@ -1,17 +1,17 @@
-﻿@model List<Jorge_Estrada.Models.Clientes>;
+﻿@model List<Jorge_Estrada.Models.Producto>;
 @{
     ViewData["Title"] = "Pagina Principal";
 }
-<h3 class="display-5">Listado de Clientes Test</h3>
+<h3 class="display-5">Listado de Productos</h3>
 <div class="text-center">
     
     <table class="table table-bordered">
         <thead class="btn-dark">
             <tr>
-                <th>Cliente</th>
-                <th>Dirección</th>
-                <th>Telefono</th>
-                <th>Edad</th>
+                <th>Nombre Producto</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+               
             </tr>
         </thead>
         <tbody>
@@ -19,10 +19,10 @@
                 foreach (var item in Model)
                 {
                     <tr>
-                        <td>@item.Cliente</td>
-                        <td>@item.Direccion</td>
-                        <td>@item.Telefono</td>
-                        <td>@item.Edad</td>
+                        <td>@item.Nombreproducto</td>
+                        <td>@item.Descripcion</td>
+                        <td>@item.Precio</td>
+                       
                     </tr>
 
                 }
@@ -35,6 +35,6 @@
     </table>
 </div>
 <div>
-<a class="btn btn-light">Crear</a>
-<a class="btn btn-light">Guardar</a>
+<a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Get">Crear</a>
+
 </div>
