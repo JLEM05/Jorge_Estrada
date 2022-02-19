@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Nueva Categoria";
+}
+
+<form asp-action="Crearcategoria">
+    <div class="form-group">
+         <input type="text" class="form-control" name="Nombrecategoria" />
+    </div>
+   <div class="form-group">
+         <input type="date" class="form-control" name="FechaActual" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Guardar" class="btn btn-success" />
+    </div>
+</form>

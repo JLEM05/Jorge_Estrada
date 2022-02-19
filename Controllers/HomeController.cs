@@ -1,21 +1,21 @@
 ﻿using Jorge_Estrada.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+using Jorge_Estrada.Data;
 
 namespace Jorge_Estrada.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly MyDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,MyDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -51,6 +51,21 @@ namespace Jorge_Estrada.Controllers
         {
             return View("Views/Productos/Productos.cshtml");
         }
+        public IActionResult Getcategorias() { 
+            return View("Views/Categoria/Categorias.cshtml");
+        }
+        public IActionResult ListaCategorias()
+        {
+            return View("Views/Categoria/ListaCategorias.cshtml");
+        }
+        public IActionResult Crearcategoria(Categoria categoria)
+        {
+            categoria.FechaActual=System.DateTime.Now;
+            _context.Categorias.Add(categoria);
+            _context.SaveChanges();
+           return RedirectToAction("Getcategorias");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
