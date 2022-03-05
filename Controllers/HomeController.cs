@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Jorge_Estrada.Data;
+using System.Linq;
 
 namespace Jorge_Estrada.Controllers
 {
@@ -51,20 +52,7 @@ namespace Jorge_Estrada.Controllers
         {
             return View("Views/Productos/Productos.cshtml");
         }
-        public IActionResult Getcategorias() { 
-            return View("Views/Categoria/Categorias.cshtml");
-        }
-        public IActionResult ListaCategorias()
-        {
-            return View("Views/Categoria/ListaCategorias.cshtml");
-        }
-        public IActionResult Crearcategoria(Categoria categoria)
-        {
-            categoria.FechaActual=System.DateTime.Now;
-            _context.Categorias.Add(categoria);
-            _context.SaveChanges();
-           return RedirectToAction("Getcategorias");
-        }
+       
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

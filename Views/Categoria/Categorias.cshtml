@@ -2,13 +2,14 @@
     ViewData["Title"] = "Nueva Categoria";
 }
 
-<form asp-action="Crearcategoria">
+<form asp-action="Crearcategoria" autocomplete="off">
     <div class="form-group">
-         <input type="text" class="form-control" name="Nombrecategoria" />
+         <input type="text" class="form-control" name="Nombrecategoria" maxlength="100" placeholder="Nombre Categoria" />
     </div>
-   <div class="form-group">
-         <input type="date" class="form-control" name="FechaActual" />
+    <div class="form-group">
+         <textarea class="form-control" name="Descripcion" maxlength="500"></textarea>
     </div>
+   
     <div class="form-group">
         <input type="submit" value="Guardar" class="btn btn-success" />
     </div>

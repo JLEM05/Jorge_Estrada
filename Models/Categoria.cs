@@ -15,8 +15,9 @@ namespace Jorge_Estrada.Models
         [StringLength(50)]
         [Required(ErrorMessage = "El campo categoria es requerido")]
         public string Nombrecategoria { get; set; }
+        public string Descripcion { get; set; }    
         public DateTime FechaActual { get; set; }
 
-
+        
     }
 }

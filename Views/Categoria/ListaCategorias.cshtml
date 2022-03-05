@@ -1,2 +1,33 @@
 ﻿@model List<Jorge_Estrada.Models.Categoria>
+<div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Nombre categoria</th>
+                <th>Acciones</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            @{
+                foreach(var categoria in Model)
+                {
+                    <tr>
+                    <td>@categoria.Nombrecategoria</td>
+                    <td>
+                        <a class="btn btn-light">Ver Descripcion</a>
+                        <a class="btn btn-primary" href="@Url.Action("Editarcategoria", new { id = categoria.CategoriaId })" >Editar</a>
+                        <a class="btn btn-danger" asp-action="Eliminarcategoria">Eliminar</a>
+                        
+                    </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+<a class="btn btn-light" asp-area="" asp-controller="Categoria" asp-action="Getcategorias">Nueva Categoria</a>
 
+
+</div>
