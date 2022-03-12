@@ -24,7 +24,7 @@ $.extend( $.fn, {
 		// If nothing is selected, return nothing; can't chain anyway
 		if ( !this.length ) {
 			if ( options && options.debug && window.console ) {
-				console.warn( "Nothing selected, can't validate, returning nothing." );
+				console.warn( "Nada seleccionado, no se puede validar, no devuelve nada." );
 			}
 			return;
 		}
@@ -360,22 +360,22 @@ $.extend( $.validator, {
 	},
 
 	messages: {
-		required: "This field is required.",
-		remote: "Please fix this field.",
-		email: "Please enter a valid email address.",
-		url: "Please enter a valid URL.",
-		date: "Please enter a valid date.",
-		dateISO: "Please enter a valid date (ISO).",
-		number: "Please enter a valid number.",
-		digits: "Please enter only digits.",
-		equalTo: "Please enter the same value again.",
-		maxlength: $.validator.format( "Please enter no more than {0} characters." ),
-		minlength: $.validator.format( "Please enter at least {0} characters." ),
-		rangelength: $.validator.format( "Please enter a value between {0} and {1} characters long." ),
-		range: $.validator.format( "Please enter a value between {0} and {1}." ),
-		max: $.validator.format( "Please enter a value less than or equal to {0}." ),
-		min: $.validator.format( "Please enter a value greater than or equal to {0}." ),
-		step: $.validator.format( "Please enter a multiple of {0}." )
+		required: "Este campo es requerido.",
+		remote: "Por favor arregla este campo.",
+		email: "Por favor, introduce una dirección de correo electrónico válida.",
+		url: "Por favor introduzca un URL válido.",
+		date: "Por favor introduzca una fecha valida.",
+		dateISO: "Introduzca una fecha válida (ISO).",
+		number: "Por favor ingrese un número valido.",
+		digits: "Por favor ingrese solo dígitos.",
+		equalTo: "Por favor, introduzca el mismo valor de nuevo.",
+		maxlength: $.validator.format( "Introduzca no más de {0} caracteres." ),
+		minlength: $.validator.format( "Introduzca al menos {0} caracteres." ),
+		rangelength: $.validator.format( "Introduzca un valor entre {0} y {1} caracteres de longitud." ),
+		range: $.validator.format( "Introduzca un valor entre {0} y {1}." ),
+		max: $.validator.format( "Introduzca un valor inferior o igual a {0}." ),
+		min: $.validator.format( "Introduzca un valor superior o igual a {0}." ),
+		step: $.validator.format( "Introduzca un múltiplo de {0}." )
 	},
 
 	autoCreateRanges: false,
@@ -640,7 +640,7 @@ $.extend( $.validator, {
 			.filter( function() {
 				var name = this.name || $( this ).attr( "name" ); // For contenteditable
 				if ( !name && validator.settings.debug && window.console ) {
-					console.error( "%o has no name assigned", this );
+					console.error( "%o no tiene nombre asignado", this );
 				}
 
 				// Set form expando on contenteditable
@@ -764,7 +764,7 @@ $.extend( $.validator, {
 				val = normalizer.call( element, val );
 
 				if ( typeof val !== "string" ) {
-					throw new TypeError( "The normalizer should return a string value." );
+					throw new TypeError( "El normalizador debe devolver un valor de cadena." );
 				}
 
 				// Delete the normalizer from rules to avoid treating it as a pre-defined method.
@@ -795,10 +795,10 @@ $.extend( $.validator, {
 					}
 				} catch ( e ) {
 					if ( this.settings.debug && window.console ) {
-						console.log( "Exception occurred when checking element " + element.id + ", check the '" + rule.method + "' method.", e );
+						console.log("Ocurrió una excepción al verificar el elemento " + element.id + ", comprobar el '" + rule.method + "' método.", e );
 					}
 					if ( e instanceof TypeError ) {
-						e.message += ".  Exception occurred when checking element " + element.id + ", check the '" + rule.method + "' method.";
+						e.message += ".  Ocurrió una excepción al verificar el elemento " + element.id + ", comprobar el '" + rule.method + "' método.";
 					}
 
 					throw e;
@@ -858,7 +858,7 @@ $.extend( $.validator, {
 					// 'title' is never undefined, so handle empty string as undefined
 					!this.settings.ignoreTitle && element.title || undefined,
 					$.validator.messages[ rule.method ],
-					"<strong>Warning: No message defined for " + element.name + "</strong>"
+					"<strong>Advertencia: No hay mensaje definido para " + element.name + "</strong>"
 				),
 				theregex = /\$?\{(\d+)\}/g;
 			if ( typeof message === "function" ) {
